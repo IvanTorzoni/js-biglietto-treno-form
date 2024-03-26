@@ -3,12 +3,13 @@
 Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo).
 
 1. INPUT
-    - [ ] Chiediamo all'utente il numero di chilometri che vuole percorrere tramite input
-    - [ ] Chiediamo all'utente la sua età tramite input
+    - [x] Chiediamo all'utente il numero di chilometri che vuole percorrere tramite input
+    - [x] Chiediamo all'utente la sua età tramite input
     - [x] Impostiamo la quota fissa di 0.21€ al km
 
 
 2. . ESECUZIONE LOGICA
+    - [x] Gestione di corretto inserimento dai dati da parte dell'utente. Se verranno inserite parole o numeri inferiori allo zero, verrà mostrato un messaggio di errore.
     - [x] Calcoliamo l'importo base che l'utente dovrà facendo la moltiplicazione tra il numero di kilometri selezionati e la quota fissa di euro al kilometro.
     - [x] Calcoliamo lo sconto in base alla fascia di età:
         - Se (l'età dell' utente è inferiore ai 18 anni)
@@ -21,4 +22,5 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
     - [x] Arrotondiamo l'importo finale a due cifre significative dopo la virgola.
 
 3. OUTPUT
-    - [ ] Stampiamo il prezzo finale in base all' informazioni fornite da utente
+    - [x] Stampiamo il prezzo finale in base all' informazioni fornite da utente
+    - [ ] Creazione form personalizzato tramite custom CSS

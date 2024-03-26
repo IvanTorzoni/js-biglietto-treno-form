@@ -30,41 +30,51 @@ sendBtn.addEventListener("click", function () {
     // Log della console
     console.log(valEurKm, typeof valEurKm);
 
-    // OPERATION
-    // Calcolo del totale che l'utente dovrà pagare non soggetto a sconti
-    let calcTot = numKm * valEurKm; //number
-    // Log della console
-    console.log(calcTot, typeof calcTot);
+    // Gestione di inserimento dati
+    // Se l'utente inserirà valori numerici e nella scala dei numeri positivi verrà eseguita la funzione...
+    if (isNaN(userAge) === false && isNaN(numKm) === false && numKm > 0 && userAge > 0) {
+        
+        // OPERATION
+        // Calcolo del totale che l'utente dovrà pagare non soggetto a sconti
+        let calcTot = numKm * valEurKm; //number
+        // Log della console
+        console.log(calcTot, typeof calcTot);
 
-    // Calcolo sconto per fascia di età
-    let discountValue  //number | null
+        // Calcolo sconto per fascia di età
+        let discountValue  //number | null
 
-    if (userAge < 18) {
-        discountValue = calcTot * 0.20;
-    } else if (userAge >= 18 && userAge < 65) {
-        discountValue = 0;
+        if (userAge < 18) {
+            discountValue = calcTot * 0.20;
+        } else if (userAge >= 18 && userAge < 65) {
+            discountValue = 0;
+        } else {
+            discountValue = calcTot * 0.40;
+        }
+
+        // Log della console
+        console.log(discountValue, typeof discountValue);
+
+        // Calcolo totale dopo applicazione sconto
+        let finalPrice = calcTot - discountValue; //number | null
+        // Log della console
+        console.log(finalPrice, typeof finalPrice);
+
+        // OUTPUT
+        // Display dell'importo finale con solo due cifre dopo la virgola
+        let finalPriceToFix = finalPrice.toFixed(2); //string | null
+        // Log della console
+        console.log(finalPriceToFix, typeof finalPriceToFix);
+
+        // Creiamo il messaggio per l'utente finale
+        const userMSG = `L'importo finale da pagare è di ${finalPriceToFix}`; //String | null
+        console.log(userMSG, typeof userMSG);
+
+        // Stampiamo il messaggio che vedrà l'utente
+        document.getElementById("result").innerHTML = userMSG;
+
+    // ...Altrimenti, se l'utente inserirà una parola o un valore nella scala dei numeri negativi, verrà mostrato il seguente messaggio. 
     } else {
-        discountValue = calcTot * 0.40;
+        // Messaggio di errore inserimento dati
+        alert("Si prega di inserire i dati corretti");
     }
-
-    // Log della console
-    console.log(discountValue, typeof discountValue);
-
-    // Calcolo totale dopo applicazione sconto
-    let finalPrice = calcTot - discountValue; //number | null
-    // Log della console
-    console.log(finalPrice, typeof finalPrice);
-
-    // OUTPUT
-    // Display dell'importo finale con solo due cifre dopo la virgola
-    let finalPriceToFix = finalPrice.toFixed(2); //string | null
-    // Log della console
-    console.log(finalPriceToFix, typeof finalPriceToFix);
-
-    // Creiamo il messaggio per l'utente finale
-    const userMSG = `L'importo finale da pagare è di ${finalPriceToFix}`; //String | null
-    console.log(userMSG, typeof userMSG);
-
-    // Stampiamo il messaggio che vedrà l'utente
-    document.getElementById("result").innerHTML = userMSG;
 })
