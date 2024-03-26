@@ -2,17 +2,30 @@
 // alert("ciao")
 
 
+//Gestione pulsante nella pagina
+// Trovo il mio bulsante nella pagina
+const sendBtn = document.getElementById("send-btn"); //object | null
+// Log della console
+console.log(sendBtn, typeof sendBtn)
+
+// Test sul bottone
+// Creazione di una funzione di test per il pulsante, al click verrà mostrato un messaggio alla console
+sendBtn.addEventListener("click", function(){
+    // una volta premuto verrà mostrato il seguente messaggio
+    console.log("Pulsante premuto");
+})
+
 // INPUT
 
 // Richista età utente
-const userAge = prompt ("Si prega di inserire la propria età"); //string | null
+// const userAge = prompt ("Si prega di inserire la propria età"); //string | null
 // Log della console
-console.log(userAge, typeof userAge);
+// console.log(userAge, typeof userAge);
 
 // Richiesta km da percorrere
-const numKM = prompt ("Inserire il numero di kilometri che si vuole percorrere");  //string | null
+// const numKM = prompt ("Inserire il numero di kilometri che si vuole percorrere");  //string | null
 // Log della console
-console.log(numKM, typeof numKM);
+// console.log(numKM, typeof numKM);
 
 // Valore euro per km
 const valEurKm = 0.21; //number
